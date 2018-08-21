@@ -1,0 +1,670 @@
+0.000 [ Info   ][Logger] Successfully extracted environment variable ORO_LOGLEVEL
+0.000 [ Info   ][Logger]  OROCOS version '2.8.3' compiled with GCC 5.4.0. Running in GNU/Linux.
+0.000 [ Info   ][Logger] Orocos Logging Activated at level : [ Debug  ] ( 6 ) 
+0.000 [ Info   ][Logger] Reference System Time is : 1534854252455583149 ticks ( 1.53485e+09 seconds ).
+0.000 [ Info   ][Logger] Logging is relative to this time.
+0.000 [ Debug  ][Logger] MainThread started.
+0.000 [ Debug  ][Logger] Starting StartStopManager.
+0.000 [ Info   ][Logger] RTT_COMPONENT_PATH was set to: /vol/cogimon-core-nightly/lib/orocos . Searching in: /vol/cogimon-core-nightly/lib/orocos
+0.000 [ Debug  ][Logger] PluginLoader Created
+0.000 [ Info   ][Logger] plugin 'rtt' not loaded before.
+0.000 [ Debug  ][Logger] No such directory: "/vol/cogimon-core-nightly/lib/orocos/./plugins"
+0.000 [ Info   ][Logger] Loading plugin libraries from directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/./plugins ...
+0.000 [ Debug  ][Logger] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./plugins/librtt-marshalling-gnulinux.so.2.8 ...not a .so library: ignored.
+0.000 [ Debug  ][Logger] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./plugins/librtt-marshalling-gnulinux.so.2.8.3 ...not a .so library: ignored.
+0.000 [ Debug  ][Logger] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./plugins/librtt-scripting-gnulinux.so.2.8.3 ...not a .so library: ignored.
+0.001 [ Debug  ][Logger] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./plugins/librtt-marshalling-gnulinux.so ...Found library librtt-marshalling-gnulinux.so
+0.001 [ Info   ][Logger] Loaded RTT Service 'marshalling' from 'rtt-marshalling'
+0.001 [ Debug  ][Logger] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./plugins/librtt-scripting-gnulinux.so.2.8 ...not a .so library: ignored.
+0.001 [ Debug  ][Logger] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./plugins/librtt-scripting-gnulinux.so ...Found library librtt-scripting-gnulinux.so
+0.001 [ Info   ][Logger] Loaded RTT Service 'scripting' from 'rtt-scripting'
+0.001 [ Info   ][Logger] typekit 'rtt' not loaded before.
+0.001 [ Debug  ][Logger] No such directory: "/vol/cogimon-core-nightly/lib/orocos/./types"
+0.001 [ Info   ][Logger] Loading typekit libraries from directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types ...
+0.011 [ Debug  ][Logger] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-typekit-gnulinux.so ...Found library librtt-typekit-gnulinux.so
+0.011 [ Info   ][TypekitRepository::Import] Loading Typekit rtt-types.
+0.011 [ Debug  ][TypekitRepository::Import] Registered Type 'int' to the Orocos Type System.
+0.011 [ Debug  ][TypekitRepository::Import] Registered Type 'uint' to the Orocos Type System.
+0.011 [ Debug  ][TypekitRepository::Import] Registered Type 'double' to the Orocos Type System.
+0.011 [ Debug  ][TypekitRepository::Import] Registered Type 'float' to the Orocos Type System.
+0.011 [ Debug  ][TypekitRepository::Import] Registered Type 'char' to the Orocos Type System.
+0.011 [ Debug  ][TypekitRepository::Import] Registered Type 'bool' to the Orocos Type System.
+0.011 [ Debug  ][TypekitRepository::Import] Registered Type 'void' to the Orocos Type System.
+0.011 [ Debug  ][TypekitRepository::Import] Registered Type 'FlowStatus' to the Orocos Type System.
+0.011 [ Debug  ][TypekitRepository::Import] Registered Type 'SendStatus' to the Orocos Type System.
+0.011 [ Debug  ][TypekitRepository::Import] Registered Type 'PropertyBag' to the Orocos Type System.
+0.011 [ Debug  ][TypekitRepository::Import] Registered Type 'ConnPolicy' to the Orocos Type System.
+0.011 [ Debug  ][TypekitRepository::Import] Registered Type 'SendHandle' to the Orocos Type System.
+0.011 [ Debug  ][TypekitRepository::Import] Registered Type 'TaskContext' to the Orocos Type System.
+0.011 [ Debug  ][TypekitRepository::Import] Registered Type 'string' to the Orocos Type System.
+0.011 [ Debug  ][TypekitRepository::Import] Registered Type 'array' to the Orocos Type System.
+0.011 [ Debug  ][TypekitRepository::Import] Registered Type 'rt_string' to the Orocos Type System.
+0.011 [ Info   ][Logger] Loaded RTT TypeKit/Transport 'rtt-types' from 'rtt-typekit'
+0.011 [ Debug  ][Logger] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-transport-corba-gnulinux.so.2.8 ...not a .so library: ignored.
+0.011 [ Debug  ][Logger] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-typekit-gnulinux.so.2.8 ...not a .so library: ignored.
+0.020 [ Debug  ][Logger] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-transport-corba-gnulinux.so ...Found library librtt-transport-corba-gnulinux.so
+0.020 [ Info   ][TypekitRepository::Import] Loading Transport CORBA://rtt-types.
+0.020 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for ConnPolicy
+0.020 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for TaskContext
+0.020 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for array
+0.020 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for bool
+0.020 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for char
+0.020 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for double
+0.020 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for float
+0.020 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for int
+0.020 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for rt_string
+0.021 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for string
+0.021 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for uint
+0.021 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for void
+0.021 [ Info   ][Logger] Loaded RTT TypeKit/Transport 'rtt-corba-types' from 'rtt-transport-corba'
+0.021 [ Debug  ][Logger] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-typekit-gnulinux.so.2.8.3 ...not a .so library: ignored.
+0.021 [ Debug  ][Logger] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-transport-corba-gnulinux.so.2.8.3 ...not a .so library: ignored.
+0.022 [ Debug  ][Logger] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-transport-mqueue-gnulinux.so ...Found library librtt-transport-mqueue-gnulinux.so
+0.022 [ Info   ][TypekitRepository::Import] Loading Transport mqueue://rtt-types.
+0.022 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for array
+0.022 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for bool
+0.022 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for char
+0.022 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for double
+0.022 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for float
+0.022 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for int
+0.022 [ Info   ][TypekitRepository::Import] Registered new 'mqueue' transport for uint
+0.022 [ Debug  ][TypekitRepository::Import] Transport mqueue did not install a fallback handler for 'unknown_t'.
+0.022 [ Info   ][Logger] Loaded RTT TypeKit/Transport 'rtt-mqueue-transport' from 'rtt-transport-mqueue'
+0.022 [ Debug  ][Logger] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-transport-mqueue-gnulinux.so.2.8.3 ...not a .so library: ignored.
+0.022 [ Debug  ][Logger] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-transport-mqueue-gnulinux.so.2.8 ...not a .so library: ignored.
+0.022 [ Info   ][Logger] RTT_COMPONENT_PATH was set to: /vol/cogimon-core-nightly/lib/orocos . Searching in: /vol/cogimon-core-nightly/lib/orocos
+0.022 [ Info   ][Logger] OCL factory set for real-time logging
+0.022 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='Deployer'
+0.022 [ Debug  ][Deployer] Setting CPU affinity to 0
+0.022 [ Info   ][Deployer] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 255 and period 0 (PID= 15138 ).
+0.022 [ Info   ][Logger] No site file was found. Importing 'ocl' by default.
+0.022 [ Info   ][ComponentLoader::import(path_list)] Importing directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl ...
+0.033 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-reporting-netcdf-gnulinux.so ...Succesfully loaded orocos-ocl-reporting-netcdf
+0.033 [ Info   ][ComponentLoader::import(path_list)] Loaded multi component library '/vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-reporting-netcdf-gnulinux.so'
+0.033 [ Debug  ][ComponentLoader::import(path_list)] Components: OCL::ConsoleReporting OCL::FileReporting OCL::TcpReporting
+0.033 [ Info   ][ComponentLoader::import(path_list)] Loaded component type 'OCL::NetcdfReporting'
+0.033 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-helloworld-gnulinux.so.2.8.4 ...not a .so library: ignored.
+0.034 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-timer-gnulinux.so ...Succesfully loaded orocos-ocl-timer
+0.034 [ Info   ][ComponentLoader::import(path_list)] Loaded multi component library '/vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-timer-gnulinux.so'
+0.034 [ Debug  ][ComponentLoader::import(path_list)] Components: OCL::TimerComponent
+0.035 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-common-gnulinux.so ...Succesfully loaded orocos-ocl-common
+0.035 [ Info   ][ComponentLoader::import(path_list)] Loaded multi component library '/vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-common-gnulinux.so'
+0.035 [ Debug  ][ComponentLoader::import(path_list)] Components: OCL::HMIConsoleOutput TaskContext
+0.035 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/plugins ...not a regular file: ignored.
+0.035 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-helloworld-gnulinux.so.2.8 ...not a .so library: ignored.
+0.035 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-reporting-netcdf-gnulinux.so.2.8.4 ...not a .so library: ignored.
+0.036 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-helloworld-gnulinux.so ...Succesfully loaded orocos-ocl-helloworld
+0.036 [ Info   ][ComponentLoader::import(path_list)] Loaded component type 'OCL::HelloWorld'
+0.036 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-timer-gnulinux.so.2.8 ...not a .so library: ignored.
+0.036 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-log4cxx-gnulinux.so.2.8 ...not a .so library: ignored.
+0.036 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-reporting-netcdf-gnulinux.so.2.8 ...not a .so library: ignored.
+0.036 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-common-gnulinux.so.2.8 ...not a .so library: ignored.
+0.036 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-timer-gnulinux.so.2.8.4 ...not a .so library: ignored.
+0.038 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-log4cxx-gnulinux.so ...Succesfully loaded orocos-ocl-log4cxx
+0.039 [ Info   ][ComponentLoader::import(path_list)] Loaded component type 'OCL::logging::Log4cxxAppender'
+0.039 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/types ...not a regular file: ignored.
+0.039 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-logging-gnulinux.so.2.8.4 ...not a .so library: ignored.
+0.039 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-logging-gnulinux.so ...Succesfully loaded orocos-ocl-logging
+0.039 [ Info   ][ComponentLoader::import(path_list)] Loaded multi component library '/vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-logging-gnulinux.so'
+0.039 [ Debug  ][ComponentLoader::import(path_list)] Components: OCL::logging::Appender OCL::logging::FileAppender OCL::logging::GenerationalFileAppender OCL::logging::LoggingService OCL::logging::OstreamAppender OCL::logging::RollingFileAppender
+0.039 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-reporting-gnulinux.so.2.8.4 ...not a .so library: ignored.
+0.039 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-reporting-gnulinux.so.2.8 ...not a .so library: ignored.
+0.039 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-reporting-gnulinux.so ...Succesfully loaded orocos-ocl-reporting
+0.039 [ Info   ][ComponentLoader::import(path_list)] Loaded multi component library '/vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-reporting-gnulinux.so'
+0.039 [ Debug  ][ComponentLoader::import(path_list)] Components: OCL::ConsoleReporting OCL::FileReporting OCL::TcpReporting
+0.039 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-log4cxx-gnulinux.so.2.8.4 ...not a .so library: ignored.
+0.039 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-common-gnulinux.so.2.8.4 ...not a .so library: ignored.
+0.039 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/liborocos-ocl-logging-gnulinux.so.2.8 ...not a .so library: ignored.
+0.039 [ Debug  ][ComponentLoader::import(path_list)] Looking for plugins or typekits in directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl ...
+0.039 [ Info   ][ComponentLoader::import(path_list)] Loading typekit libraries from directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/types ...
+0.039 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/types/libocl-gnulinux.so.2.8 ...not a .so library: ignored.
+0.040 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/types/libocl-gnulinux.so.2.8.4 ...not a .so library: ignored.
+0.041 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/types/libocl-gnulinux.so ...Found library libocl-gnulinux.so
+0.041 [ Info   ][TypekitRepository::Import] Loading Typekit OCLTypekit.
+0.041 [ Debug  ][TypekitRepository::Import] Registered Type 'strings' to the Orocos Type System.
+0.041 [ Debug  ][TypekitRepository::Import] Registered Type 'ints' to the Orocos Type System.
+0.041 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT TypeKit/Transport 'OCLTypekit' from 'ocl'
+0.041 [ Info   ][ComponentLoader::import(path_list)] Loading plugin libraries from directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/plugins ...
+0.041 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/plugins/libprint-gnulinux.so.2.8 ...not a .so library: ignored.
+0.042 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/plugins/libos-gnulinux.so ...Found library libos-gnulinux.so
+0.042 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT Service 'os' from 'os'
+0.043 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/plugins/libprint-gnulinux.so ...Found library libprint-gnulinux.so
+0.043 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT Service 'print' from 'print'
+0.043 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/plugins/libos-gnulinux.so.2.8 ...not a .so library: ignored.
+0.043 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/plugins/libprint-gnulinux.so.2.8.4 ...not a .so library: ignored.
+0.043 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ocl/plugins/libos-gnulinux.so.2.8.4 ...not a .so library: ignored.
+0.043 [ Info   ][Logger] Loading Service or Plugin scripting in TaskContext Deployer
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller activateStateMachine
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller activateStateMachine
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller deactivateStateMachine
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller deactivateStateMachine
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller eval
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller eval
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller execute
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller execute
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getProgramLine
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getProgramLine
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getProgramList
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getProgramList
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getProgramStatus
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getProgramStatus
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getProgramStatusStr
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getProgramStatusStr
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getProgramText
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getProgramText
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getStateMachineLine
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getStateMachineLine
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getStateMachineList
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getStateMachineList
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getStateMachineState
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getStateMachineState
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getStateMachineStatus
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getStateMachineStatus
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getStateMachineStatusStr
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getStateMachineStatusStr
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getStateMachineText
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller getStateMachineText
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller hasProgram
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller hasProgram
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller hasStateMachine
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller hasStateMachine
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller inProgramError
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller inProgramError
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller inStateMachineError
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller inStateMachineError
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller inStateMachineState
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller inStateMachineState
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller isProgramPaused
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller isProgramPaused
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller isProgramRunning
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller isProgramRunning
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller isStateMachineActive
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller isStateMachineActive
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller isStateMachinePaused
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller isStateMachinePaused
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller isStateMachineRunning
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller isStateMachineRunning
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller loadProgramText
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller loadProgramText
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller loadPrograms
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller loadPrograms
+0.043 [ Debug  ][Logger] Successfully set up OperationCaller loadStateMachineText
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller loadStateMachineText
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller loadStateMachines
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller loadStateMachines
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller pauseProgram
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller pauseProgram
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller pauseStateMachine
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller pauseStateMachine
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller requestStateMachineState
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller requestStateMachineState
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller resetStateMachine
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller resetStateMachine
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller runScript
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller runScript
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller startProgram
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller startProgram
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller startStateMachine
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller startStateMachine
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller stepProgram
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller stepProgram
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller stopProgram
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller stopProgram
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller stopStateMachine
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller stopStateMachine
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller unloadProgram
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller unloadProgram
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller unloadStateMachine
+0.044 [ Debug  ][Logger] Successfully set up OperationCaller unloadStateMachine
+0.044 [ Info   ][Logger] Found complete interface of requested service 'scripting'
+0.044 [ Info   ][Logger] Running Script SingleArmTest.ops ...
+0.044 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='GlobalEngine'
+0.044 [ Debug  ][GlobalEngine] Setting CPU affinity to 0
+0.044 [ Info   ][GlobalEngine] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 255 and period 0 (PID= 15139 ).
+0.046 [ Info   ][ComponentLoader::import(path_list)] Importing directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/eigen_typekit ...
+0.046 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/eigen_typekit/types ...not a regular file: ignored.
+0.046 [ Debug  ][ComponentLoader::import(path_list)] Looking for plugins or typekits in directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/eigen_typekit ...
+0.046 [ Info   ][ComponentLoader::import(path_list)] Loading typekit libraries from directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/eigen_typekit/types ...
+0.048 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/eigen_typekit/types/libeigen_typekit-gnulinux.so ...Found library libeigen_typekit-gnulinux.so
+0.048 [ Info   ][TypekitRepository::Import] Loading Typekit Eigen.
+0.048 [ Debug  ][TypekitRepository::Import] Registered Type 'eigen_vector' to the Orocos Type System.
+0.048 [ Debug  ][TypekitRepository::Import] Registered Type 'eigen_matrix' to the Orocos Type System.
+0.048 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT TypeKit/Transport 'Eigen' from 'eigen_typekit'
+0.048 [ Debug  ][ComponentLoader::import(path_list)] No such directory: "/vol/cogimon-core-nightly/lib/orocos/gnulinux/eigen_typekit/plugins"
+0.048 [ Info   ][ComponentLoader::import(path_list)] Importing directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/kdl_typekit ...
+0.048 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/kdl_typekit/types ...not a regular file: ignored.
+0.048 [ Debug  ][ComponentLoader::import(path_list)] Looking for plugins or typekits in directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/kdl_typekit ...
+0.048 [ Info   ][ComponentLoader::import(path_list)] Loading typekit libraries from directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/kdl_typekit/types ...
+0.049 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/kdl_typekit/types/libkdl-transport-corba-gnulinux.so ...Found library libkdl-transport-corba-gnulinux.so
+0.049 [ Info   ][TypekitRepository::Import] Loading Transport CORBA://KDL.
+0.049 [ Debug  ][TypekitRepository::Import] Transport CORBA did not install a fallback handler for 'unknown_t'.
+0.049 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT TypeKit/Transport 'kdl-corba-types' from 'kdl-transport-corba'
+0.067 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/kdl_typekit/types/libkdl_typekit-gnulinux.so ...Found library libkdl_typekit-gnulinux.so
+0.067 [ Info   ][TypekitRepository::Import] Loading Typekit KDL.
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.Chain' to the Orocos Type System.
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.Chain[]' to the Orocos Type System.
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.Frame' to the Orocos Type System.
+0.067 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for KDL.Frame
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.Frame[]' to the Orocos Type System.
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.Jacobian' to the Orocos Type System.
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.Jacobian[]' to the Orocos Type System.
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.JntArray' to the Orocos Type System.
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.JntArray[]' to the Orocos Type System.
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.Joint' to the Orocos Type System.
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.Joint[]' to the Orocos Type System.
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.Rotation' to the Orocos Type System.
+0.067 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for KDL.Rotation
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.Rotation[]' to the Orocos Type System.
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.Segment' to the Orocos Type System.
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.Segment[]' to the Orocos Type System.
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.Twist' to the Orocos Type System.
+0.067 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for KDL.Twist
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.Twist[]' to the Orocos Type System.
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.Vector' to the Orocos Type System.
+0.067 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for KDL.Vector
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.Vector[]' to the Orocos Type System.
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.Wrench' to the Orocos Type System.
+0.067 [ Info   ][TypekitRepository::Import] Registered new 'CORBA' transport for KDL.Wrench
+0.067 [ Debug  ][TypekitRepository::Import] Registered Type 'KDL.Wrench[]' to the Orocos Type System.
+0.067 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT TypeKit/Transport 'KDL' from 'kdl_typekit'
+0.067 [ Debug  ][ComponentLoader::import(path_list)] No such directory: "/vol/cogimon-core-nightly/lib/orocos/gnulinux/kdl_typekit/plugins"
+0.067 [ Info   ][ComponentLoader::import(path_list)] Importing directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/rst-rt_typekit ...
+0.068 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/rst-rt_typekit/types ...not a regular file: ignored.
+0.068 [ Debug  ][ComponentLoader::import(path_list)] Looking for plugins or typekits in directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/rst-rt_typekit ...
+0.068 [ Info   ][ComponentLoader::import(path_list)] Loading typekit libraries from directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/rst-rt_typekit/types ...
+0.100 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/rst-rt_typekit/types/librst-rt_typekit-gnulinux.so ...Found library librst-rt_typekit-gnulinux.so
+0.100 [ Info   ][TypekitRepository::Import] Loading Typekit rst-rt.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.geometry.Translation' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.geometry.Translation[]' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.geometry.Rotation' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.geometry.Rotation[]' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.geometry.Pose' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.geometry.Pose[]' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.geometry.LinearAcceleration' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.geometry.LinearAcceleration[]' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.geometry.AngularVelocity' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.geometry.AngularVelocity[]' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.kinematics.JointAngles' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.kinematics.JointAngles[]' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.kinematics.JointVelocities' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.kinematics.JointVelocities[]' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.kinematics.JointAccelerations' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.kinematics.JointAccelerations[]' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.kinematics.JointJerks' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.kinematics.JointJerks[]' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.kinematics.LinearVelocities' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.kinematics.LinearVelocities[]' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.kinematics.Twist' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.kinematics.Twist[]' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.dynamics.JointTorques' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.dynamics.JointTorques[]' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.dynamics.JointImpedance' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.dynamics.JointImpedance[]' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.dynamics.Forces' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.dynamics.Forces[]' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.dynamics.Torques' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.dynamics.Torques[]' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.dynamics.Wrench' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.dynamics.Wrench[]' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.robot.JointState' to the Orocos Type System.
+0.100 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.robot.JointState[]' to the Orocos Type System.
+0.101 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.robot.Weights' to the Orocos Type System.
+0.101 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.robot.Weights[]' to the Orocos Type System.
+0.101 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.robot.IMU' to the Orocos Type System.
+0.101 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.robot.IMU[]' to the Orocos Type System.
+0.101 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.robot.Odometry' to the Orocos Type System.
+0.101 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.robot.Odometry[]' to the Orocos Type System.
+0.101 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.monitoring.CallTraceSample' to the Orocos Type System.
+0.101 [ Debug  ][TypekitRepository::Import] Registered Type 'rstrt.monitoring.CallTraceSample[]' to the Orocos Type System.
+0.101 [ Info   ][ComponentLoader::import(path_list)] Loaded RTT TypeKit/Transport 'rst-rt' from 'rst-rt_typekit'
+0.101 [ Debug  ][ComponentLoader::import(path_list)] No such directory: "/vol/cogimon-core-nightly/lib/orocos/gnulinux/rst-rt_typekit/plugins"
+0.102 [ Info   ][ComponentLoader::import(path_list)] Importing directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/rtt_gazebo_embedded ...
+0.212 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/rtt_gazebo_embedded/librtt_gazebo_embedded-gnulinux.so ...Succesfully loaded rtt_gazebo_embedded
+0.212 [ Info   ][ComponentLoader::import(path_list)] Loaded component type 'RTTGazeboEmbedded'
+0.216 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/rtt_gazebo_embedded/libmodel_plugin_example-gnulinux.so ...Succesfully loaded model_plugin_example
+0.217 [ Info   ][ComponentLoader::import(path_list)] Loaded component type 'ModelPluginExample'
+0.217 [ Debug  ][ComponentLoader::import(path_list)] Looking for plugins or typekits in directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/rtt_gazebo_embedded ...
+0.218 [ Debug  ][ComponentLoader::import(path_list)] No such directory: "/vol/cogimon-core-nightly/lib/orocos/gnulinux/rtt_gazebo_embedded/types"
+0.218 [ Debug  ][ComponentLoader::import(path_list)] No such directory: "/vol/cogimon-core-nightly/lib/orocos/gnulinux/rtt_gazebo_embedded/plugins"
+0.219 [ Info   ][ComponentLoader::import(path_list)] Importing directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/rtt-gazebo-robot-sim ...
+0.235 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/rtt-gazebo-robot-sim/librtt-gazebo-robot-sim-gnulinux.so ...Succesfully loaded rtt-gazebo-robot-sim
+0.236 [ Info   ][ComponentLoader::import(path_list)] Loaded multi component library '/vol/cogimon-core-nightly/lib/orocos/gnulinux/rtt-gazebo-robot-sim/librtt-gazebo-robot-sim-gnulinux.so'
+0.237 [ Debug  ][ComponentLoader::import(path_list)] Components: cogimon::robotSim
+0.237 [ Debug  ][ComponentLoader::import(path_list)] Looking for plugins or typekits in directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/rtt-gazebo-robot-sim ...
+0.237 [ Debug  ][ComponentLoader::import(path_list)] No such directory: "/vol/cogimon-core-nightly/lib/orocos/gnulinux/rtt-gazebo-robot-sim/types"
+0.238 [ Debug  ][ComponentLoader::import(path_list)] No such directory: "/vol/cogimon-core-nightly/lib/orocos/gnulinux/rtt-gazebo-robot-sim/plugins"
+0.239 [ Info   ][ComponentLoader::import(path_list)] Importing directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/ProjectedDynamics ...
+0.274 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/ProjectedDynamics/libProjectedDynamics-gnulinux.so ...Succesfully loaded ProjectedDynamics
+0.274 [ Info   ][ComponentLoader::import(path_list)] Loaded multi component library '/vol/cogimon-core-nightly/lib/orocos/gnulinux/ProjectedDynamics/libProjectedDynamics-gnulinux.so'
+0.275 [ Debug  ][ComponentLoader::import(path_list)] Components: AllInOne CollisionDetector ConstrainedAuxiliaries ForceEstimatorFB JointPositionCtrl JointSpaceDamping JointSpaceTrajectoryGenerator PoseController PositionController PriorityMatrixCombinatorNEW ProjectionCombiner ReachingTask SimpleNormalForceController SimpleTaskController TaskDescriberGrasping TaskDescriberSingleArm TaskPrioritizationStrictSuccessive TaskPrioritizationWeighting TorqueSafetyChecker TrajectoryGenerator TrajectoryGeneratorBoris TrajectoryGeneratorDoubleKukaArm TrajectoryGeneratorGrasp TrajectoryGeneratorHexaKukaArm TrajectoryGeneratorQuadroKukaArm TrajectoryGeneratorTripleKukaArm WrapperKDL WrapperKDLMultiRobotarms
+0.275 [ Debug  ][ComponentLoader::import(path_list)] Looking for plugins or typekits in directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/ProjectedDynamics ...
+0.275 [ Debug  ][ComponentLoader::import(path_list)] No such directory: "/vol/cogimon-core-nightly/lib/orocos/gnulinux/ProjectedDynamics/types"
+0.275 [ Debug  ][ComponentLoader::import(path_list)] No such directory: "/vol/cogimon-core-nightly/lib/orocos/gnulinux/ProjectedDynamics/plugins"
+0.275 [ Info   ][ComponentLoader::import(path_list)] Importing directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/CosimaUtilities ...
+0.288 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/CosimaUtilities/libCosimaUtilities-gnulinux.so ...Succesfully loaded CosimaUtilities
+0.288 [ Info   ][ComponentLoader::import(path_list)] Loaded multi component library '/vol/cogimon-core-nightly/lib/orocos/gnulinux/CosimaUtilities/libCosimaUtilities-gnulinux.so'
+0.288 [ Debug  ][ComponentLoader::import(path_list)] Components: EECollisionSafety EEDesiredDistanceSafety EEVelocitySafety FeedbackCombiner ForceEstimator GazeboContactSensor GazeboForceTorqueSensor GazeboPose JointTorquesCombiner JointVelocitySafety TorqueCommandSeperator TorqueSafety TorqueTransition VectorXfCombiner
+0.288 [ Debug  ][ComponentLoader::import(path_list)] Looking for plugins or typekits in directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/CosimaUtilities ...
+0.288 [ Debug  ][ComponentLoader::import(path_list)] No such directory: "/vol/cogimon-core-nightly/lib/orocos/gnulinux/CosimaUtilities/types"
+0.289 [ Debug  ][ComponentLoader::import(path_list)] No such directory: "/vol/cogimon-core-nightly/lib/orocos/gnulinux/CosimaUtilities/plugins"
+0.289 [ Info   ][ComponentLoader::import(path_list)] Importing directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/cosima-trajectory-generators ...
+0.292 [ Debug  ][ComponentLoader::import(path_list)] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/cosima-trajectory-generators/libcosima-trajectory-generators-gnulinux.so ...Succesfully loaded cosima-trajectory-generators
+0.292 [ Info   ][ComponentLoader::import(path_list)] Loaded multi component library '/vol/cogimon-core-nightly/lib/orocos/gnulinux/cosima-trajectory-generators/libcosima-trajectory-generators-gnulinux.so'
+0.292 [ Debug  ][ComponentLoader::import(path_list)] Components: TrajectoryGeneratorLinear
+0.292 [ Debug  ][ComponentLoader::import(path_list)] Looking for plugins or typekits in directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/cosima-trajectory-generators ...
+0.292 [ Debug  ][ComponentLoader::import(path_list)] No such directory: "/vol/cogimon-core-nightly/lib/orocos/gnulinux/cosima-trajectory-generators/types"
+0.292 [ Debug  ][ComponentLoader::import(path_list)] No such directory: "/vol/cogimon-core-nightly/lib/orocos/gnulinux/cosima-trajectory-generators/plugins"
+0.296 [ Debug  ][loadComponent] Trying to create component robot_gazebo1 of type cogimon::robotSim
+0.296 [ Debug  ][loadComponent] Found factory for Component type cogimon::robotSim
+0.296 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='robot_gazebo1'
+0.296 [ Debug  ][Thread] Setting CPU affinity to 0
+0.304 [ Info   ][robot_gazebo1] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 255 and period 0 (PID= 15168 ).
+0.305 [ Info   ][loadComponent] Adding robot_gazebo1 as new peer:  OK.
+0.307 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_RT, priority=90, CPU affinity=2, with name='robot_gazebo1'
+0.308 [ Warning][Thread] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.309 [ Warning][Thread] Forcing priority (90) of thread with SCHED_OTHER policy to 0.
+0.309 [ Debug  ][Thread] Setting CPU affinity to 2
+0.317 [ Warning][robot_gazebo1] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.317 [ Info   ][robot_gazebo1] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 2 and period 0 (PID= 15169 ).
+0.317 [ Debug  ][~Thread] Terminating robot_gazebo1
+0.317 [ Debug  ][Thread]  done
+0.318 [ ERROR  ][ScriptingService] No model could be loaded
+0.336 [ Debug  ][loadComponent] Trying to create component gazebo of type RTTGazeboEmbedded
+0.336 [ Debug  ][loadComponent] Found factory for Component type RTTGazeboEmbedded
+0.337 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='gazebo'
+0.337 [ Debug  ][gazebo] Setting CPU affinity to 0
+0.337 [ Info   ][gazebo] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 255 and period 0 (PID= 15170 ).
+0.337 [ Info   ][loadComponent] Creating gazebo with gazebo embedded !
+0.337 [ Info   ][loadComponent] Adding gazebo as new peer:  OK.
+0.337 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=10, CPU affinity=4294967295, with name='gazebo'
+0.337 [ Warning][Thread] Forcing priority (10) of thread with SCHED_OTHER policy to 0.
+0.338 [ Info   ][gazebo] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 255 and period 0 (PID= 15171 ).
+0.338 [ Debug  ][~Thread] Terminating gazebo
+0.338 [ Debug  ][Thread]  done
+0.345 [ Info   ][ScriptingService] Creating world at /vol/cogimon-core-nightly/etc/cogimon-scenarios/scenario-projected-dynamics/scn-MultiKukaArm.world
+0.346 [ Debug  ][ScriptingService] MainThread started.
+0.346 [ Debug  ][ScriptingService] Starting StartStopManager.
+0.346 [ Info   ][ScriptingService] RTT_COMPONENT_PATH was set to: /vol/cogimon-core-nightly/lib/orocos . Searching in: /vol/cogimon-core-nightly/lib/orocos
+0.346 [ Info   ][ScriptingService] plugin 'rtt' not loaded before.
+0.346 [ Debug  ][ScriptingService] No such directory: "/vol/cogimon-core-nightly/lib/orocos/./plugins"
+0.346 [ Info   ][ScriptingService] Loading plugin libraries from directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/./plugins ...
+0.346 [ Debug  ][ScriptingService] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./plugins/librtt-marshalling-gnulinux.so.2.8 ...not a .so library: ignored.
+0.346 [ Debug  ][ScriptingService] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./plugins/librtt-marshalling-gnulinux.so.2.8.3 ...not a .so library: ignored.
+0.346 [ Debug  ][ScriptingService] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./plugins/librtt-scripting-gnulinux.so.2.8.3 ...not a .so library: ignored.
+0.346 [ Debug  ][ScriptingService] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./plugins/librtt-marshalling-gnulinux.so ...plugin '/vol/cogimon-core-nightly/lib/orocos/gnulinux/./plugins/librtt-marshalling-gnulinux.so' already loaded. Not reloading it.
+0.346 [ Debug  ][ScriptingService] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./plugins/librtt-scripting-gnulinux.so.2.8 ...not a .so library: ignored.
+0.346 [ Debug  ][ScriptingService] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./plugins/librtt-scripting-gnulinux.so ...plugin '/vol/cogimon-core-nightly/lib/orocos/gnulinux/./plugins/librtt-scripting-gnulinux.so' already loaded. Not reloading it.
+0.346 [ Info   ][ScriptingService] typekit 'rtt' not loaded before.
+0.346 [ Debug  ][ScriptingService] No such directory: "/vol/cogimon-core-nightly/lib/orocos/./types"
+0.346 [ Info   ][ScriptingService] Loading typekit libraries from directory /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types ...
+0.346 [ Debug  ][ScriptingService] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-typekit-gnulinux.so ...plugin '/vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-typekit-gnulinux.so' already loaded. Not reloading it.
+0.346 [ Debug  ][ScriptingService] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-transport-corba-gnulinux.so.2.8 ...not a .so library: ignored.
+0.346 [ Debug  ][ScriptingService] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-typekit-gnulinux.so.2.8 ...not a .so library: ignored.
+0.346 [ Debug  ][ScriptingService] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-transport-corba-gnulinux.so ...plugin '/vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-transport-corba-gnulinux.so' already loaded. Not reloading it.
+0.346 [ Debug  ][ScriptingService] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-typekit-gnulinux.so.2.8.3 ...not a .so library: ignored.
+0.346 [ Debug  ][ScriptingService] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-transport-corba-gnulinux.so.2.8.3 ...not a .so library: ignored.
+0.346 [ Debug  ][ScriptingService] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-transport-mqueue-gnulinux.so ...plugin '/vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-transport-mqueue-gnulinux.so' already loaded. Not reloading it.
+0.346 [ Debug  ][ScriptingService] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-transport-mqueue-gnulinux.so.2.8.3 ...not a .so library: ignored.
+0.346 [ Debug  ][ScriptingService] Scanning file /vol/cogimon-core-nightly/lib/orocos/gnulinux/./types/librtt-transport-mqueue-gnulinux.so.2.8 ...not a .so library: ignored.
+0.346 [ Info   ][ScriptingService] RTT_COMPONENT_PATH was set to: /vol/cogimon-core-nightly/lib/orocos . Searching in: /vol/cogimon-core-nightly/lib/orocos
+0.356 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='rtt_clock_SimClockThread'
+0.356 [ Debug  ][rtt_clock_SimClockThread] Setting CPU affinity to 0
+0.356 [ Info   ][rtt_clock_SimClockThread] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 255 and period 0 (PID= 15175 ).
+0.356 [ Debug  ][ScriptingService] [rtt_clock] Attempting to enable global simulation clock source...
+0.356 [ Debug  ][ScriptingService] [rtt_clock] Switching to simulated time based on a manual clock source...
+0.356 [ Info   ][ScriptingService] Orocos Logging Deactivated.
+0.000 [ Info   ][ScriptingService] Successfully extracted environment variable ORO_LOGLEVEL
+0.000 [ Info   ][ScriptingService]  OROCOS version '2.8.3' compiled with GCC 5.4.0. Running in GNU/Linux.
+0.000 [ Info   ][ScriptingService] Orocos Logging Activated at level : [ Debug  ] ( 6 ) 
+0.000 [ Info   ][ScriptingService] Reference System Time is : 0 ticks ( 0 seconds ).
+0.000 [ Info   ][ScriptingService] Logging is relative to this time.
+0.193 [ Info   ][ScriptingService] Model [robotmodel1] successfully loaded !
+0.193 [ Info   ][ScriptingService] URDF path: /vol/cogimon-core-nightly/share/gazebo/models/cogimon/kuka-lwr-4plus-triangle/model.urdf
+0.193 [ Info   ][ScriptingService] SRDF path: /vol/cogimon-core-nightly/share/gazebo/models/cogimon/kuka-lwr-4plus-triangle/model.srdf
+0.193 [ Info   ][ScriptingService] chain #0 full_arm
+0.193 [ Info   ][ScriptingService]   lwr_arm_0_joint
+0.193 [ Info   ][ScriptingService]   lwr_arm_1_joint
+0.193 [ Info   ][ScriptingService]   lwr_arm_2_joint
+0.193 [ Info   ][ScriptingService]   lwr_arm_3_joint
+0.193 [ Info   ][ScriptingService]   lwr_arm_4_joint
+0.193 [ Info   ][ScriptingService]   lwr_arm_5_joint
+0.193 [ Info   ][ScriptingService]   lwr_arm_6_joint
+0.193 [ Info   ][ScriptingService] Model name robotmodel1
+0.193 [ Info   ][ScriptingService] Model has 8 joints
+0.193 [ Info   ][ScriptingService] Model has 8 links
+0.193 [ Info   ][ScriptingService] Creating Kinematic Chain full_arm
+0.193 [ Info   ][ScriptingService] Joints: 
+0.193 [ Info   ][ScriptingService]     lwr_arm_0_joint
+0.193 [ Info   ][ScriptingService]     lwr_arm_1_joint
+0.193 [ Info   ][ScriptingService]     lwr_arm_2_joint
+0.193 [ Info   ][ScriptingService]     lwr_arm_3_joint
+0.193 [ Info   ][ScriptingService]     lwr_arm_4_joint
+0.193 [ Info   ][ScriptingService]     lwr_arm_5_joint
+0.193 [ Info   ][ScriptingService]     lwr_arm_6_joint
+0.193 [ Info   ][ScriptingService] Kinematic Chains map created!
+0.193 [ Info   ][ScriptingService] Available controllers for full_arm are:
+0.193 [ Info   ][ScriptingService]   JointPositionCtrl
+0.193 [ Info   ][ScriptingService]   JointImpedanceCtrl
+0.193 [ Info   ][ScriptingService]   JointTorqueCtrl
+0.193 [ Info   ][ScriptingService] Joint lwr_arm_0_joint in chain full_arm has scoped name robotmodel1::lwr_arm_0_joint
+0.193 [ Info   ][ScriptingService] Joint lwr_arm_1_joint in chain full_arm has scoped name robotmodel1::lwr_arm_1_joint
+0.193 [ Info   ][ScriptingService] Joint lwr_arm_2_joint in chain full_arm has scoped name robotmodel1::lwr_arm_2_joint
+0.193 [ Info   ][ScriptingService] Joint lwr_arm_3_joint in chain full_arm has scoped name robotmodel1::lwr_arm_3_joint
+0.193 [ Info   ][ScriptingService] Joint lwr_arm_4_joint in chain full_arm has scoped name robotmodel1::lwr_arm_4_joint
+0.193 [ Info   ][ScriptingService] Joint lwr_arm_5_joint in chain full_arm has scoped name robotmodel1::lwr_arm_5_joint
+0.193 [ Info   ][ScriptingService] Joint lwr_arm_6_joint in chain full_arm has scoped name robotmodel1::lwr_arm_6_joint
+0.193 [ Info   ][ScriptingService] JointPositionCtrl activated!
+0.193 [ Info   ][ScriptingService] JointImpedanceCtrl activated!
+0.193 [ Info   ][ScriptingService] JointTorqueCtrl activated!
+0.193 [ Info   ][ScriptingService] Full feedback activated!
+0.193 [ Info   ][ScriptingService] full_arm PIDs:
+0.193 [ Info   ][ScriptingService]   lwr_arm_0_joint P: 1000 I: 0 D: 0.1
+0.193 [ Info   ][ScriptingService]   lwr_arm_1_joint P: 1000 I: 0 D: 0.1
+0.193 [ Info   ][ScriptingService]   lwr_arm_2_joint P: 600 I: 0 D: 0.1
+0.193 [ Info   ][ScriptingService]   lwr_arm_3_joint P: 1000 I: 0 D: 0.1
+0.193 [ Info   ][ScriptingService]   lwr_arm_4_joint P: 100 I: 0 D: 0.1
+0.193 [ Info   ][ScriptingService]   lwr_arm_5_joint P: 100 I: 0 D: 0.1
+0.193 [ Info   ][ScriptingService]   lwr_arm_6_joint P: 10 I: 0 D: 0.01
+0.193 [ Info   ][ScriptingService] Gazebo Joint Controlled inited!
+0.193 [ Info   ][ScriptingService] Initial Position set!
+0.193 [ Info   ][ScriptingService] full_arm impedance:
+0.193 [ Info   ][ScriptingService]   lwr_arm_0_joint stiffness: 300 damping: 30
+0.193 [ Info   ][ScriptingService]   lwr_arm_1_joint stiffness: 300 damping: 30
+0.193 [ Info   ][ScriptingService]   lwr_arm_2_joint stiffness: 300 damping: 30
+0.193 [ Info   ][ScriptingService]   lwr_arm_3_joint stiffness: 300 damping: 30
+0.193 [ Info   ][ScriptingService]   lwr_arm_4_joint stiffness: 300 damping: 30
+0.193 [ Info   ][ScriptingService]   lwr_arm_5_joint stiffness: 300 damping: 30
+0.193 [ Info   ][ScriptingService]   lwr_arm_6_joint stiffness: 300 damping: 30
+0.193 [ Info   ][ScriptingService] Initial Impedance set!
+0.193 [ Info   ][ScriptingService] Kinematic Chains Initialized!
+0.193 [ Info   ][ScriptingService] Checking Sensors (URDF/SRDF)
+0.193 [ Info   ][ScriptingService] Force Update of SensorManager (before accessing sensors)!
+0.193 [ Info   ][ScriptingService] Checking Sensors (Gazebo)
+0.193 [ Warning][ScriptingService] Done Configuring Component
+0.193 [ Debug  ][loadComponent] Trying to create component fkin of type WrapperKDL
+0.193 [ Debug  ][loadComponent] Found factory for Component type WrapperKDL
+0.193 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='fkin'
+0.193 [ Debug  ][fkin] Setting CPU affinity to 0
+0.193 [ Info   ][fkin] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 255 and period 0 (PID= 15196 ).
+0.193 [ Info   ][loadComponent] Adding fkin as new peer:  OK.
+0.193 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_RT, priority=75, CPU affinity=1, with name='fkin'
+0.193 [ Warning][Thread] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.193 [ Warning][Thread] Forcing priority (75) of thread with SCHED_OTHER policy to 0.
+0.193 [ Warning][fkin] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.193 [ Debug  ][fkin] Setting CPU affinity to 1
+0.193 [ Info   ][fkin] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 1 and period 0.001 (PID= 15197 ).
+0.193 [ Debug  ][~Thread] Terminating fkin
+0.193 [ Debug  ][Thread]  done
+0.193 [ Debug  ][loadComponent] Trying to create component jointposcontroller of type JointPositionCtrl
+0.193 [ Debug  ][loadComponent] Found factory for Component type JointPositionCtrl
+0.193 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='jointposcontroller'
+0.193 [ Debug  ][Thread] Setting CPU affinity to 0
+0.193 [ Info   ][jointposcontroller] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 255 and period 0 (PID= 15198 ).
+0.193 [ Info   ][loadComponent] Adding jointposcontroller as new peer:  OK.
+0.193 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_RT, priority=75, CPU affinity=1, with name='jointposcontroller'
+0.193 [ Warning][Thread] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.193 [ Warning][Thread] Forcing priority (75) of thread with SCHED_OTHER policy to 0.
+0.193 [ Debug  ][jointposcontroller] Setting CPU affinity to 1
+0.193 [ Warning][jointposcontroller] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.193 [ Info   ][jointposcontroller] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 1 and period 0.001 (PID= 15199 ).
+0.193 [ Debug  ][~Thread] Terminating jointposcontroller
+0.193 [ Debug  ][Thread]  done
+0.193 [ Debug  ][loadComponent] Trying to create component trajectorygenerator of type TrajectoryGeneratorLinear
+0.193 [ Debug  ][loadComponent] Found factory for Component type TrajectoryGeneratorLinear
+0.193 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='trajectorygenerator'
+0.193 [ Debug  ][trajectorygenerator] Setting CPU affinity to 0
+0.193 [ Info   ][trajectorygenerator] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 255 and period 0 (PID= 15200 ).
+0.193 [ Info   ][loadComponent] Adding trajectorygenerator as new peer:  OK.
+0.193 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_RT, priority=10, CPU affinity=1, with name='trajectorygenerator'
+0.193 [ Warning][Thread] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.193 [ Warning][Thread] Forcing priority (10) of thread with SCHED_OTHER policy to 0.
+0.193 [ Debug  ][Thread] Setting CPU affinity to 1
+0.193 [ Warning][trajectorygenerator] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.193 [ Info   ][trajectorygenerator] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 1 and period 0.001 (PID= 15201 ).
+0.193 [ Debug  ][~Thread] Terminating trajectorygenerator
+0.193 [ Debug  ][Thread]  done
+0.193 [ Info   ][ScriptingService] Done preparing ports
+0.193 [ Debug  ][loadComponent] Trying to create component positioncontroller of type PositionController
+0.193 [ Debug  ][loadComponent] Found factory for Component type PositionController
+0.193 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='positioncontroller'
+0.193 [ Debug  ][positioncontroller] Setting CPU affinity to 0
+0.193 [ Info   ][positioncontroller] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 255 and period 0 (PID= 15202 ).
+0.193 [ Info   ][loadComponent] Adding positioncontroller as new peer:  OK.
+0.193 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_RT, priority=10, CPU affinity=1, with name='positioncontroller'
+0.193 [ Warning][Thread] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.193 [ Warning][Thread] Forcing priority (10) of thread with SCHED_OTHER policy to 0.
+0.193 [ Debug  ][Thread] Setting CPU affinity to 1
+0.193 [ Warning][positioncontroller] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.193 [ Info   ][positioncontroller] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 1 and period 0.001 (PID= 15203 ).
+0.193 [ Debug  ][~Thread] Terminating positioncontroller
+0.193 [ Debug  ][Thread]  done
+0.193 [ Debug  ][loadComponent] Trying to create component transition of type TorqueTransition
+0.193 [ Debug  ][loadComponent] Found factory for Component type TorqueTransition
+0.193 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='transition'
+0.193 [ Debug  ][transition] Setting CPU affinity to 0
+0.193 [ Info   ][transition] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 255 and period 0 (PID= 15204 ).
+0.193 [ Info   ][loadComponent] Adding transition as new peer:  OK.
+0.193 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_RT, priority=10, CPU affinity=1, with name='transition'
+0.193 [ Warning][Thread] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.193 [ Warning][Thread] Forcing priority (10) of thread with SCHED_OTHER policy to 0.
+0.193 [ Warning][transition] Lowering scheduler type to SCHED_OTHER for non-privileged users..
+0.193 [ Debug  ][transition] Setting CPU affinity to 1
+0.193 [ Info   ][transition] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 1 and period 0.001 (PID= 15205 ).
+0.193 [ Debug  ][~Thread] Terminating transition
+0.193 [ Debug  ][Thread]  done
+0.193 [ Debug  ][connect] Connected output port full_arm_JointFeedback successfully to in_robotstatus_port
+0.193 [ Info   ][connect] Connected Port robot_gazebo1.full_arm_JointFeedback to  fkin.in_robotstatus_port.
+0.193 [ Debug  ][connect] Connected output port out_desiredTaskSpacePosition_port successfully to in_desiredTaskSpacePosition_port
+0.193 [ Info   ][connect] Connected Port trajectorygenerator.out_desiredTaskSpacePosition_port to  positioncontroller.in_desiredTaskSpacePosition_port.
+0.193 [ Debug  ][connect] Connected output port out_desiredTaskSpaceVelocity_port successfully to in_desiredTaskSpaceVelocity_port
+0.193 [ Info   ][connect] Connected Port trajectorygenerator.out_desiredTaskSpaceVelocity_port to  positioncontroller.in_desiredTaskSpaceVelocity_port.
+0.193 [ Debug  ][connect] Connected output port out_desiredTaskSpaceAcceleration_port successfully to in_desiredTaskSpaceAcceleration_port
+0.193 [ Info   ][connect] Connected Port trajectorygenerator.out_desiredTaskSpaceAcceleration_port to  positioncontroller.in_desiredTaskSpaceAcceleration_port.
+0.193 [ Debug  ][connect] Connected output port out_cartPos_port successfully to in_currentTaskSpacePosition_port
+0.193 [ Info   ][connect] Connected Port fkin.out_cartPos_port to  positioncontroller.in_currentTaskSpacePosition_port.
+0.193 [ Debug  ][connect] Connected output port out_cartVel_port successfully to in_currentTaskSpaceVelocity_port
+0.193 [ Info   ][connect] Connected Port fkin.out_cartVel_port to  positioncontroller.in_currentTaskSpaceVelocity_port.
+0.193 [ Debug  ][connect] Connected output port out_jacobian_port successfully to in_jacobian_port
+0.193 [ Info   ][connect] Connected Port fkin.out_jacobian_port to  positioncontroller.in_jacobian_port.
+0.193 [ Debug  ][connect] Connected output port out_jacobianDot_port successfully to in_jacobianDot_port
+0.193 [ Info   ][connect] Connected Port fkin.out_jacobianDot_port to  positioncontroller.in_jacobianDot_port.
+0.193 [ Debug  ][connect] Connected output port out_inertiaInv_port successfully to in_inertiaInv_port
+0.193 [ Info   ][connect] Connected Port fkin.out_inertiaInv_port to  positioncontroller.in_inertiaInv_port.
+0.193 [ Debug  ][connect] Connected output port out_coriolisAndGravity_port successfully to in_h_port
+0.193 [ Info   ][connect] Connected Port fkin.out_coriolisAndGravity_port to  positioncontroller.in_h_port.
+0.193 [ Debug  ][connect] Connected output port out_robotstatus_port successfully to in_robotstatus_port
+0.193 [ Info   ][connect] Connected Port fkin.out_robotstatus_port to  positioncontroller.in_robotstatus_port.
+0.193 [ Debug  ][connect] Connected output port out_cartPos_port successfully to in_cartPos_port
+0.193 [ Info   ][connect] Connected Port fkin.out_cartPos_port to  trajectorygenerator.in_cartPos_port.
+0.193 [ Debug  ][connect] Connected output port out_cartVel_port successfully to in_cartVel_port
+0.193 [ Info   ][connect] Connected Port fkin.out_cartVel_port to  trajectorygenerator.in_cartVel_port.
+0.193 [ Debug  ][connect] Connected output port out_cartAcc_port successfully to in_cartAcc_port
+0.193 [ Info   ][connect] Connected Port fkin.out_cartAcc_port to  trajectorygenerator.in_cartAcc_port.
+0.193 [ Debug  ][connect] Connected output port out_robotstatus_port successfully to in_robotstatus_port
+0.193 [ Info   ][connect] Connected Port fkin.out_robotstatus_port to  jointposcontroller.in_robotstatus_port.
+0.193 [ Debug  ][connect] Connected output port out_coriolisAndGravity_port successfully to in_coriolisAndGravity_port
+0.193 [ Info   ][connect] Connected Port fkin.out_coriolisAndGravity_port to  jointposcontroller.in_coriolisAndGravity_port.
+0.193 [ Debug  ][connect] Connected output port out_torques_port successfully to in_torquesA_port
+0.193 [ Info   ][connect] Connected Port jointposcontroller.out_torques_port to  transition.in_torquesA_port.
+0.193 [ Debug  ][connect] Connected output port out_torques_port successfully to in_torquesB_port
+0.193 [ Info   ][connect] Connected Port positioncontroller.out_torques_port to  transition.in_torquesB_port.
+0.193 [ Debug  ][connect] Connected output port out_torques_port successfully to full_arm_JointTorqueCtrl
+0.193 [ Info   ][connect] Connected Port transition.out_torques_port to  robot_gazebo1.full_arm_JointTorqueCtrl.
+0.193 [ Info   ][Thread] Creating Thread for scheduler=ORO_SCHED_OTHER, priority=1, CPU affinity=0, with name='TaskBrowser'
+0.193 [ Debug  ][TaskBrowser] Setting CPU affinity to 0
+0.193 [ Info   ][TaskBrowser] Thread created with scheduler type 'ORO_SCHED_OTHER', priority 0, cpu affinity 255 and period 0 (PID= 15206 ).
+0.193 [ Info   ][Logger] Entering Task Deployer
+65.014 [ Info   ][Logger] Ignoring deployment shutdown function due to missing peer.
+65.014 [ Debug  ][~Thread] Terminating TaskBrowser
+65.014 [ Debug  ][Thread]  done
+65.014 [ Info   ][stopComponentsGroup] Stopping group 0
+65.015 [ Info   ][stopComponentsGroup] Stopped transition
+65.015 [ Info   ][stopComponentsGroup] Stopped positioncontroller
+65.016 [ Info   ][stopComponentsGroup] Stopped trajectorygenerator
+65.016 [ Info   ][stopComponentsGroup] Stopped jointposcontroller
+65.018 [ Info   ][stopComponentsGroup] Stopped fkin
+65.018 [ Info   ][stopComponentsGroup] Stopped gazebo
+65.018 [ Info   ][stopComponentsGroup] Stopped robot_gazebo1
+65.018 [ Info   ][cleanupComponentsGroup] Cleaning up group 0
+65.018 [ Info   ][cleanupComponentsGroup] Cleaned up transition
+65.018 [ Info   ][cleanupComponentsGroup] Cleaned up positioncontroller
+65.018 [ Info   ][cleanupComponentsGroup] Cleaned up trajectorygenerator
+65.018 [ Info   ][cleanupComponentsGroup] Cleaned up jointposcontroller
+65.018 [ Info   ][cleanupComponentsGroup] Cleaned up fkin
+65.018 [ Info   ][cleanupComponentsGroup] Cleaned up gazebo
+65.018 [ Info   ][cleanupComponentsGroup] Cleaned up robot_gazebo1
+65.018 [ Info   ][Logger] Unloading group 0
+65.018 [ Debug  ][Logger] Disconnecting transition
+65.018 [ Debug  ][Logger] Terminating transition
+65.018 [ Debug  ][~Thread] Terminating transition
+65.018 [ Debug  ][Thread]  done
+65.018 [ Info   ][Logger] Disconnected and destroyed transition
+65.018 [ Debug  ][Logger] Disconnecting positioncontroller
+65.018 [ Debug  ][Logger] Terminating positioncontroller
+65.018 [ Debug  ][~Thread] Terminating positioncontroller
+65.018 [ Debug  ][Thread]  done
+65.018 [ Info   ][Logger] Disconnected and destroyed positioncontroller
+65.018 [ Debug  ][Logger] Disconnecting trajectorygenerator
+65.018 [ Debug  ][Logger] Terminating trajectorygenerator
+65.018 [ Debug  ][~Thread] Terminating trajectorygenerator
+65.018 [ Debug  ][Thread]  done
+65.018 [ Info   ][Logger] Disconnected and destroyed trajectorygenerator
+65.018 [ Debug  ][Logger] Disconnecting jointposcontroller
+65.018 [ Debug  ][Logger] Terminating jointposcontroller
+65.018 [ Debug  ][~Thread] Terminating jointposcontroller
+65.018 [ Debug  ][Thread]  done
+65.018 [ Info   ][Logger] Disconnected and destroyed jointposcontroller
+65.018 [ Debug  ][Logger] Disconnecting fkin
+65.018 [ Debug  ][Logger] Terminating fkin
+65.018 [ Debug  ][~Thread] Terminating fkin
+65.018 [ Debug  ][Thread]  done
+65.018 [ Info   ][Logger] Disconnected and destroyed fkin
+65.018 [ Debug  ][Logger] Disconnecting gazebo
+65.018 [ Debug  ][Logger] Terminating gazebo
+65.018 [ Debug  ][~Thread] Terminating gazebo
+65.018 [ Debug  ][Thread]  done
+65.018 [ Info   ][Logger] Disconnected and destroyed gazebo
+65.018 [ Debug  ][Logger] Disconnecting robot_gazebo1
+65.018 [ Debug  ][Logger] Terminating robot_gazebo1
+65.018 [ Debug  ][~Thread] Terminating robot_gazebo1
+65.018 [ Debug  ][Thread]  done
+65.018 [ Info   ][Logger] Disconnected and destroyed robot_gazebo1
+65.018 [ Info   ][Logger] Kick-out of group 0 successful.
+65.018 [ Debug  ][~Thread] Terminating Deployer
+65.018 [ Debug  ][Thread]  done
+65.018 [ Debug  ][Logger] TLSF bytes allocated=524288 overhead=6384 max-used=6720 currently-used=6384 still-allocated=0
+65.018 [ Debug  ][~Thread] Terminating GlobalEngine
+65.018 [ Debug  ][Thread]  done
+65.018 [ Debug  ][Logger] Stopping StartStopManager.
+65.018 [ Info   ][Logger] Disabling simulated time...
+65.018 [ Info   ][Logger] Orocos Logging Deactivated.
+0.000 [ Info   ][Logger] Successfully extracted environment variable ORO_LOGLEVEL
+0.000 [ Info   ][Logger]  OROCOS version '2.8.3' compiled with GCC 5.4.0. Running in GNU/Linux.
+0.000 [ Info   ][Logger] Orocos Logging Activated at level : [ Debug  ] ( 6 ) 
+0.000 [ Info   ][Logger] Reference System Time is : 65018003282 ticks ( 65.018 seconds ).
+0.000 [ Info   ][Logger] Logging is relative to this time.
+0.000 [ Debug  ][~Thread] Terminating rtt_clock_SimClockThread
+0.000 [ Debug  ][Thread]  done
+0.000 [ Debug  ][Logger] PluginLoader Destroyed
+0.000 [ Debug  ][Logger] Stopping MainThread.
+0.000 [ Info   ][Logger] Orocos Logging Deactivated.

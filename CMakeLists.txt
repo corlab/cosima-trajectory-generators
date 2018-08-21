@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(cosima-trajectory-generators)
 
+message(STATUS "Current CMAKE DIR: ${CMAKE_CURRENT_SOURCE_DIR}")
+
 set(CMAKE_BUILD_TYPE Release)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
@@ -89,14 +91,13 @@ include_directories(
 
 file(GLOB_RECURSE rtt_gazebo_robot_sim_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include" *.h)
 
-#orocos_component(trajectoryGenerator src/trajectoryGenerator.cpp ${rtt_gazebo_robot_sim_INCLUDES})
+#orocos_component(trajectoryGeneratorLinear src/trajectoryGeneratorLinear.cpp ${rtt_gazebo_robot_sim_INCLUDES})
 
-orocos_component(${PROJECT_NAME} src/TrajectoryGenerator.cpp ${rtt_gazebo_robot_sim_INCLUDES})
+orocos_component(${PROJECT_NAME} src/TrajectoryGeneratorLinear.cpp ${rtt_gazebo_robot_sim_INCLUDES})
 
 set_property(TARGET ${PROJECT_NAME} APPEND PROPERTY COMPILE_DEFINITIONS RTT_COMPONENT)
 
 target_link_libraries(${PROJECT_NAME}
-    senderComponent
    ${USE_OROCOS_LIBRARIES}
    ${orocos_kdl_LIBRARIES}
    ${GAZEBO_LIBRARIES}

@@ -1,0 +1,241 @@
+var bool doSimulation = true;
+var int numManipulators = 1;
+var int manipulatorID = 0;
+var int objectID = 0;
+var int numObjects = 1;
+var int DOFsize = 7;
+
+var float robotWorldPosSetoffA = 0.4;
+var float robotWorldPosSetoffB = 0.2828;#sqrt(robotWorldPosSetoffA*robotWorldPosSetoffA*0.5)
+
+import("eigen_typekit")
+import("kdl_typekit")
+import("rst-rt_typekit")
+if (doSimulation) then {
+  import("rtt_gazebo_embedded")
+  import("rtt-gazebo-robot-sim")
+}
+import("ProjectedDynamics")
+import("CosimaUtilities")
+import("cosima-trajectory-generators")
+require("os")
+
+var string model = "kuka-lwr-4plus-triangle";
+#var string model = "kuka-lwr-4plus-sponge";
+
+var string path_model_urdf = os.getenv("GAZEBO_MODEL_PATH")+"/"+model+"/model.urdf"
+var string path_model_srdf = os.getenv("GAZEBO_MODEL_PATH")+"/"+model+"/model.srdf"
+
+
+loadComponent("robot_gazebo1","cogimon::robotSim")
+setActivityOnCPU("robot_gazebo1",0,90,ORO_SCHED_RT,1)
+#lwr_robot.loadURDFAndSRDF(path_model_urdf,path_model_srdf)
+robot_gazebo1.configure()
+
+
+var float componentfrequency;
+var bool useExternalSensing;
+var float constantForce;
+var float object1mass;
+var float object1inertia;
+if (doSimulation) then {
+  componentfrequency = 0.001;
+  useExternalSensing = true;
+  constantForce = 60.0;
+  object1mass = 1.0;
+  object1inertia = 0.166667;
+}
+else{
+  componentfrequency = 0.001;
+  useExternalSensing = false;
+  constantForce = 2.0;
+  object1mass = 1.0;
+  object1inertia = 0.166667;
+}
+
+
+var ConnPolicy cp;
+
+var rstrt.kinematics.JointAngles desJointAngles = rstrt.kinematics.JointAngles(DOFsize)
+desJointAngles.angles[0] =0
+desJointAngles.angles[1] =-0.4
+desJointAngles.angles[2] = 0
+desJointAngles.angles[3] = -2
+desJointAngles.angles[4] =0 
+desJointAngles.angles[5] = +0.35
+desJointAngles.angles[6] = 0
+
+var rstrt.geometry.Translation t = rstrt.geometry.Translation(0,0,0);
+var rstrt.geometry.Rotation r = rstrt.geometry.Rotation(1,0,0,0);
+
+var bool translationOnly = false;
+var int TaskSpaceDimension = 6;
+
+########################## BRAUNSCHWEIG SETUP (DON'T CHANGE) #####################################
+var rstrt.geometry.Translation t1;
+var rstrt.geometry.Rotation r1;
+var rstrt.geometry.Translation t2;
+var rstrt.geometry.Rotation r2;
+var rstrt.geometry.Translation t3;
+var rstrt.geometry.Rotation r3;
+var rstrt.geometry.Translation t4;
+var rstrt.geometry.Rotation r4;
+var float angleYaw1;
+var float angleYaw2;
+var float angleYaw3;
+var float angleYaw4;
+
+
+#LWR1 and LWR2 and LWR3 and LWR4
+  angleYaw1 = 2.61799;#=150deg
+  angleYaw2 = -2.09439;#=-120deg
+  angleYaw3 = -0.523599;#=-30deg
+  angleYaw4 = 0.523599;#=30deg
+
+  t1 = rstrt.geometry.Translation(0,0,0);
+  r1 = rstrt.geometry.Rotation(0,0,0,0);#w,x,y,z
+  #r1 = rstrt.geometry.Rotation(0,0,angleYaw1);#roll,pitch,yaw
+
+  t2 = rstrt.geometry.Translation(0,0,0);
+  r2 = rstrt.geometry.Rotation(0,0,0,0);#w,x,y,z
+  #r2 = rstrt.geometry.Rotation(0,0,angleYaw1);#roll,pitch,yaw
+
+  t3 = rstrt.geometry.Translation(0,0,0);
+  r3 = rstrt.geometry.Rotation(0,0,0,0);#w,x,y,z
+  #r3 = rstrt.geometry.Rotation(0,0,angleYaw2);#roll,pitch,yaw
+
+  t4 = rstrt.geometry.Translation(0,0,0);
+  r4 = rstrt.geometry.Rotation(0,0,0,0);#w,x,y,z
+  #r4 = rstrt.geometry.Rotation(0,0,angleYaw2);#roll,pitch,yaw
+
+t1 = rstrt.geometry.Translation(+robotWorldPosSetoffA,0,0);
+r1 = rstrt.geometry.Rotation(1,0,0,0);#w,x,y,z
+#r1 = rstrt.geometry.Rotation(0,0,angleYaw1);#roll,pitch,yaw
+t2 = rstrt.geometry.Translation(-robotWorldPosSetoffA,0,0);
+r2 = rstrt.geometry.Rotation(0,0,0,1);#w,x,y,z
+#r2 = rstrt.geometry.Rotation(0,0,angleYaw2);#roll,pitch,yaw
+
+#########################################################
+
+loadComponent("gazebo","RTTGazeboEmbedded");
+setActivity("gazebo",0,10,ORO_SCHED_OTHER);
+if (doSimulation) then {
+gazebo.argv = strings("--verbose");
+gazebo.add_plugin("libRTTGazeboClockPlugin.so")
+
+gazebo.world_path=os.getenv("prefix")+"/cogimon-core-nightly/etc/cogimon-scenarios/scenario-projected-dynamics/scn-MultiKukaArm.world";
+gazebo.configure()
+gazebo.start()
+gazebo.toggleDynamicsSimulation(false)
+
+gazebo.spawn_model_at_position_and_orientation("robotmodel1", "model://"+model, t1, r1);
+
+eval("robot_gazebo1.getModel(\"robotmodel1\");");
+eval("robot_gazebo1.loadURDFAndSRDF(\""+path_model_urdf+"\", \""+path_model_srdf+"\");");
+eval("robot_gazebo1.configure();");
+
+#gazebo.setInitialConfigurationForModel("robotmodel1", initialConfig);
+#gazebo.setInitialConfigurationForModel("robotmodel2", initialConfig);
+}
+
+loadComponent("fkin", "WrapperKDL")
+setActivityOnCPU("fkin",0.001,75,ORO_SCHED_RT,0)
+fkin.loadModelWithWorldOffset(path_model_urdf, "world","lwr_tool_link", t1, r1);
+fkin.setDOFsize(DOFsize);
+fkin.include_gravity = true;
+fkin.configure()
+
+# loadComponent("fkin", "WrapperKDLMultiRobotarms");
+# setActivity("fkin",0.001,10,ORO_SCHED_OTHER)
+# fkin.setNumRobotArms(1);
+# fkin.loadModel(path_model_urdf);
+# fkin.addChainWithWorldOffset("world", "lwr_tool_link", t1, r1);
+# fkin.setDOFsize(7);
+# fkin.configure()
+
+loadComponent("jointposcontroller","JointPositionCtrl")
+setActivityOnCPU("jointposcontroller",0.001,75,ORO_SCHED_RT,0)
+jointposcontroller.setDOFsize(DOFsize)
+jointposcontroller.setGains(6,6)
+jointposcontroller.setDesiredJointAngles(desJointAngles)
+# jointposcontroller.setJointVelocityLimit(1)
+jointposcontroller.configure()
+
+loadComponent("trajectorygenerator", "TrajectoryGeneratorLinear")
+setActivityOnCPU("trajectorygenerator",0.001,10,ORO_SCHED_RT,0)
+trajectorygenerator.configure()
+trajectorygenerator.setNumEndeffectors(1)
+trajectorygenerator.preparePorts()
+trajectorygenerator.timeScale = 0.001;
+
+loadComponent("positioncontroller", "PositionController")
+setActivityOnCPU("positioncontroller",0.001,10,ORO_SCHED_RT,0)
+positioncontroller.setTranslationOnly(true);
+positioncontroller.setDOFsize(DOFsize);
+positioncontroller.setNumEndeffectors(1);
+positioncontroller.performVelocitySaturation=false;
+positioncontroller.velocityLimit=1.0;
+positioncontroller.addTSgravitycompensation(true);
+positioncontroller.setGains(30,1);
+positioncontroller.preparePorts();
+positioncontroller.configure();
+
+loadComponent("transition", "TorqueTransition")
+setActivityOnCPU("transition",0.001,10,ORO_SCHED_RT,0)
+transition.setDOFsizeAndTransitionTime(7,60)
+transition.configure()
+
+connect("robot_gazebo1.full_arm_JointFeedback", "fkin.in_robotstatus_port", cp)
+
+## TrajectoryGenerator -> Positioncontroller
+connect("trajectorygenerator.out_desiredTaskSpacePosition_port", "positioncontroller.in_desiredTaskSpacePosition_port", cp)
+connect("trajectorygenerator.out_desiredTaskSpaceVelocity_port", "positioncontroller.in_desiredTaskSpaceVelocity_port", cp)
+connect("trajectorygenerator.out_desiredTaskSpaceAcceleration_port", "positioncontroller.in_desiredTaskSpaceAcceleration_port", cp)
+
+## Fkin -> Positioncontroller
+connect("fkin.out_cartPos_port", "positioncontroller.in_currentTaskSpacePosition_port", cp)
+connect("fkin.out_cartVel_port", "positioncontroller.in_currentTaskSpaceVelocity_port", cp)
+connect("fkin.out_jacobian_port", "positioncontroller.in_jacobian_port", cp)
+connect("fkin.out_jacobianDot_port", "positioncontroller.in_jacobianDot_port", cp)
+connect("fkin.out_inertiaInv_port", "positioncontroller.in_inertiaInv_port", cp)
+connect("fkin.out_coriolisAndGravity_port", "positioncontroller.in_h_port", cp)
+
+
+connect("fkin.out_robotstatus_port", "positioncontroller.in_robotstatus_port", cp)
+
+#connect("trajectorygenerator.out_desiredJointVelocity_port", "positioncontroller.in_desiredJointVelocities_port", cp)
+
+### Fkin -> TrajectoryGenerator 
+connect("fkin.out_cartPos_port", "trajectorygenerator.in_cartPos_port", cp)
+connect("fkin.out_cartVel_port", "trajectorygenerator.in_cartVel_port", cp)
+connect("fkin.out_cartAcc_port", "trajectorygenerator.in_cartAcc_port", cp)
+
+connect("fkin.out_robotstatus_port", "jointposcontroller.in_robotstatus_port", cp)
+connect("fkin.out_coriolisAndGravity_port","jointposcontroller.in_coriolisAndGravity_port", cp)
+
+connect("jointposcontroller.out_torques_port", "transition.in_torquesA_port", cp)
+connect("positioncontroller.out_torques_port", "transition.in_torquesB_port", cp)
+
+connect("transition.out_torques_port", "robot_gazebo1.full_arm_JointTorqueCtrl",cp)
+
+
+robot_gazebo1.setControlMode("full_arm", "JointTorqueCtrl")
+
+if (doSimulation) then {
+  gazebo.toggleDynamicsSimulation(true)
+  gazebo.stop()
+}
+
+fkin.start()
+jointposcontroller.start()
+trajectorygenerator.start()
+positioncontroller.start()
+transition.start()
+transition.useA=false
+robot_gazebo1.start()
+
+#generate graph file
+#import("rtt_dot_service")
+#loadService("this", "dot")
+#dot.generate
+
