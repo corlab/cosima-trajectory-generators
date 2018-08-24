@@ -161,10 +161,18 @@ jointposcontroller.setDesiredJointAngles(desJointAngles)
 # jointposcontroller.setJointVelocityLimit(1)
 jointposcontroller.configure()
 
-loadComponent("trajectorygenerator", "TrajectoryGeneratorLinear")
+#loadComponent("trajectorygenerator", "TrajectoryGeneratorLinear")
+#setActivityOnCPU("trajectorygenerator",0.001,10,ORO_SCHED_RT,0)
+#trajectorygenerator.configure()
+#trajectorygenerator.setNumEndeffectors(1)
+#trajectorygenerator.preparePorts()
+#trajectorygenerator.timeScale = 0.001;
+
+loadComponent("trajectorygenerator", "TrajectoryGeneratorElliptic")
 setActivityOnCPU("trajectorygenerator",0.001,10,ORO_SCHED_RT,0)
 trajectorygenerator.configure()
 trajectorygenerator.setNumEndeffectors(1)
+//trajectorygenerator.setRadii(0.5, 0.5, 0)
 trajectorygenerator.preparePorts()
 trajectorygenerator.timeScale = 0.001;
 

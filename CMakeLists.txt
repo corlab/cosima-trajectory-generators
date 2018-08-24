@@ -91,13 +91,12 @@ include_directories(
 
 file(GLOB_RECURSE rtt_gazebo_robot_sim_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include" *.h)
 
-#orocos_component(trajectoryGeneratorLinear src/trajectoryGeneratorLinear.cpp ${rtt_gazebo_robot_sim_INCLUDES})
+add_library(TrajectoryGen SHARED src/TrajectoryGenerator.cpp)
 
-orocos_component(${PROJECT_NAME} src/TrajectoryGeneratorLinear.cpp ${rtt_gazebo_robot_sim_INCLUDES})
+# Use RTT_STATIC so Orocos does not complain about non component libraries
+set_property(TARGET TrajectoryGen APPEND PROPERTY COMPILE_DEFINITIONS RTT_STATIC)
 
-set_property(TARGET ${PROJECT_NAME} APPEND PROPERTY COMPILE_DEFINITIONS RTT_COMPONENT)
-
-target_link_libraries(${PROJECT_NAME}
+target_link_libraries(TrajectoryGen
    ${USE_OROCOS_LIBRARIES}
    ${orocos_kdl_LIBRARIES}
    ${GAZEBO_LIBRARIES}
@@ -109,5 +108,30 @@ target_link_libraries(${PROJECT_NAME}
    ${XBotCoreModel_LIBRARIES}
    ${RTT-CORE-EXTENSIONS_LIBRARIES}
 )
+
+#orocos_component(trajectoryGeneratorLinear src/trajectoryGeneratorLinear.cpp ${rtt_gazebo_robot_sim_INCLUDES})
+
+orocos_component(${PROJECT_NAME} src/TrajectoryGeneratorLinear.cpp src/TrajectoryGeneratorElliptic.cpp ${rtt_gazebo_robot_sim_INCLUDES})
+
+set_property(TARGET ${PROJECT_NAME} APPEND PROPERTY COMPILE_DEFINITIONS RTT_COMPONENT)
+
+target_link_libraries(${PROJECT_NAME}
+    TrajectoryGen
+   ${USE_OROCOS_LIBRARIES}
+   ${orocos_kdl_LIBRARIES}
+   ${GAZEBO_LIBRARIES}
+   ${OROCOS-RTT_LIBRARIES}
+   ${Boost_LIBRARIES}
+   ${RST-RT_LIBRARIES}
+   ${TINYXML_LIBRARIES}
+   ${srdfdom_advr_LIBRARIES}
+   ${XBotCoreModel_LIBRARIES}
+   ${RTT-CORE-EXTENSIONS_LIBRARIES}
+)
+
+install(TARGETS  TrajectoryGen
+            RUNTIME DESTINATION bin
+            LIBRARY DESTINATION lib
+ARCHIVE DESTINATION lib)
 
 orocos_generate_package(INCLUDE_DIRS include)
