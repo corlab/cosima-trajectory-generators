@@ -16,6 +16,8 @@ TrajectoryGeneratorElliptic::TrajectoryGeneratorElliptic(const std::string &name
     addOperation("setRadii", &TrajectoryGeneratorElliptic::setRadii, this, ClientThread);
     addOperation("setShift", &TrajectoryGeneratorElliptic::setShift, this, ClientThread);
     addOperation("setStepSize", &TrajectoryGeneratorElliptic::setStepSize, this, ClientThread);
+    addOperation("setAngles", &TrajectoryGeneratorElliptic::setAngles, this, ClientThread);
+    addOperation("printPostions", &TrajectoryGeneratorElliptic::printPositions, this);
     
     validEllipsoid = false;
     radA = 0;
@@ -23,15 +25,16 @@ TrajectoryGeneratorElliptic::TrajectoryGeneratorElliptic(const std::string &name
     currentStep = 0;
     stepSize = 32;
 
-    ellipsePositions = Eigen::VectorXf::Zero(stepSize * 3);
+    ellipsePositions = Eigen::MatrixXf::Zero(3, stepSize);
 
+    rotEuler.setZero();
     shift.setZero();
 }
 
 void TrajectoryGeneratorElliptic::setStepSize(unsigned int _stepSize) {
     assert(stepSize > 1);
     this->stepSize = _stepSize;
-    this->ellipsePositions = Eigen::VectorXf::Zero(stepSize * 3);
+    this->ellipsePositions = Eigen::MatrixXf::Zero(3, stepSize);
 }
 
 void TrajectoryGeneratorElliptic::setShift(float _shiftX, float _shiftY, float _shiftZ) {
@@ -40,21 +43,30 @@ void TrajectoryGeneratorElliptic::setShift(float _shiftX, float _shiftY, float _
     shift(3) = _shiftZ;
 }
 
-void TrajectoryGeneratorElliptic::setRadii(float _radA, float _radB, float _radC) {
+void TrajectoryGeneratorElliptic::setAngles(float _angleX, float _angleY, float _angleZ) {
+    rotEuler(0) = _angleX;
+    rotEuler(1) = _angleY;
+    rotEuler(2) = _angleZ;
+
+    rotEuler = Eigen::AngleAxisf(_angleX, Eigen::Vector3f::UnitX())
+               * Eigen::AngleAxisf(_angleY, Eigen::Vector3f::UnitY())
+               * Eigen::AngleAxisf(_angleZ, Eigen::Vector3f::UnitZ());
+
+    computeEllipsoid();
+}
+
+void TrajectoryGeneratorElliptic::setRadii(float _radA, float _radB) {
     assert(radA > 0);
     assert(radB > 0);
 
     this->radA = _radA;
     this->radB = _radB;
-    this->radC = _radC;
-
-    computeEllipsoid();
 }
 
 void TrajectoryGeneratorElliptic::samplePath(Eigen::VectorXf &target) {
     //Enters this function when the last goal was reached
     currentStep = (currentStep+1 < stepSize) ? currentStep+1 : 0;
-    startPosition.segment<3>(0) = ellipsePositions.segment<3>(currentStep*3);
+    startPosition.segment<3>(0) = ellipsePositions.row(currentStep);
     sampleLinearPath(startPosition);
     reachedStart = false;
 }
@@ -66,18 +78,28 @@ void TrajectoryGeneratorElliptic::computeEllipsoid() {
     assert(radA > 0);
     assert(radB > 0);
 
-    for (int i = 1; i != stepSize; i++) {
-        phi = 2*M_PI/stepSize;
-        ellipsePositions.segment<3>((i-1)*3) = shift + desiredPosition.segment<3>(0) + Eigen::Vector3f(radA * cos(phi), radB * sin(phi), 1);
+    for (int i = 1; i <= stepSize; i++) {
+        phi = 2*M_PI/stepSize * i;
+        ellipsePositions.row(i) = shift + desiredPosition.segment<3>(0) + rotEuler * Eigen::Vector3f(radA * cos(phi), radB * sin(phi), 0);
     }
-
+    
     //startPosition is calculated automatially
-    startPosition.segment<3>(0) = ellipsePositions.segment<3>(0);
+    startPosition.segment<3>(0) = ellipsePositions.row(0); 
+}
+
+void TrajectoryGeneratorElliptic::printPositions() {
+    std::cout << "Ellipse positions: \nmat = [";
+    float phi;
+    for (int i = 1; i <= stepSize; i++) {
+        phi = 2*M_PI/stepSize * i;
+        std::cout << (shift + desiredPosition.segment<3>(0) + rotEuler * Eigen::Vector3f(radA * cos(phi), radB * sin(phi), 0)).transpose() << ";\n";
+    }
+    std::cout << "];\nplot3(mat(:,1), mat(:,2), mat(:,3), \"o-\")\n" << std::endl;
 }
 
 bool TrajectoryGeneratorElliptic::setStartPos(float a, float b, float c) {
     RTT::log(RTT::Error) << "The elliptic trajectory generator sets its start position automatically.\nYou need to specify the center with setTarget and radii (and optionally you can add a shift)" << RTT::endlog();
-    return false;
+    return false; 
 }
 
 // This macro, as you can see, creates the component. Every component should have this!

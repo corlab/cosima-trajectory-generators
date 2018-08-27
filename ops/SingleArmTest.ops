@@ -247,3 +247,8 @@ robot_gazebo1.start()
 #loadService("this", "dot")
 #dot.generate
 
+
+## Test Elliptic Trajectory
+trajectorygenerator.setTargetPostion(0,0,0.4)
+trajectorygenerator.setRadii(0.5,0.3)
+trajectorygenerator.setAngles(10,20,-35)

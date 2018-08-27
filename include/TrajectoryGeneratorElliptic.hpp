@@ -22,18 +22,21 @@ public:
     void samplePath(Eigen::VectorXf &target);
     void setStepSize(unsigned int stepSize);
     void setShift(float shiftX, float shiftY, float shiftZ);
-    void setRadii(float radA, float radB, float radC);
+    void setRadii(float radA, float radB);
+    void setAngles(float angleX, float angleY, float angleZ);
     void computeEllipsoid();
     
+    void printPositions();
     bool setStartPos(float a, float b, float c);
     
 
 protected:
 
-    Eigen::VectorXf ellipsePositions;
+    Eigen::Matrix3Xf ellipsePositions;
     Eigen::Vector3f shift;
+    Eigen::Matrix3f rotEuler;
 
     unsigned int stepSize, currentStep;
-    float radA, radB, radC;
+    float radA, radB;
     bool validEllipsoid;
 };
