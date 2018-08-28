@@ -10,20 +10,23 @@ using namespace RTT;
 using namespace RTT::os;
 using namespace Eigen;
 
-TrajectoryGenerator::TrajectoryGenerator(const std::string &name): RTT::TaskContext(name) {
+TrajectoryGenerator::TrajectoryGenerator(const std::string &name) : RTT::TaskContext(name)
+{
     addOperation("setStartPosition", &TrajectoryGenerator::setStartPos, this, ClientThread);
     addOperation("setTargetPostion", &TrajectoryGenerator::setTargetPos, this, ClientThread);
-    
+
     addOperation("preparePorts", &TrajectoryGenerator::preparePorts, this);
     addOperation("setNumEndeffectors", &TrajectoryGenerator::setNumEndeffectors, this);
-    
+
     addProperty("recoveryFactor", recoveryFactor);
     addProperty("timeScale", timeScale);
     addProperty("goForIt", goForIt);
 }
 
-void TrajectoryGenerator::preparePorts() {
-    if (portsArePrepared) {
+void TrajectoryGenerator::preparePorts()
+{
+    if (portsArePrepared)
+    {
         ports()->removePort("in_cartPos_port");
         ports()->removePort("in_cartVel_port");
         ports()->removePort("in_cartAcc_port");
@@ -73,25 +76,27 @@ void TrajectoryGenerator::preparePorts() {
     RTT::log(RTT::Info) << "Done preparing ports" << RTT::endlog();
 }
 
-void TrajectoryGenerator::setNumEndeffectors(unsigned int num) {
+void TrajectoryGenerator::setNumEndeffectors(unsigned int num)
+{
     assert(num > 0);
     numberOfEndEffectors = num;
 
     workspaceDimension = 3 * num;
-    
+
     this->in_cartPos_var = Eigen::VectorXf::Zero(workspaceDimension);
     this->in_cartVel_var = Eigen::VectorXf::Zero(workspaceDimension);
     this->in_cartAcc_var = Eigen::VectorXf::Zero(workspaceDimension);
-    
-    this->out_desiredTaskSpacePosition_var = Eigen::VectorXf::Zero(workspaceDimension);
-    this->out_desiredTaskSpaceVelocity_var = Eigen::VectorXf::Zero(workspaceDimension);
-    this->out_desiredTaskSpaceAcceleration_var = Eigen::VectorXf::Zero(workspaceDimension);
+
+    this->out_desiredTaskSpacePosition_var = Eigen::VectorXf::Zero(workspaceDimension + 4);
+    this->out_desiredTaskSpaceVelocity_var = Eigen::VectorXf::Zero(workspaceDimension + 3);
+    this->out_desiredTaskSpaceAcceleration_var = Eigen::VectorXf::Zero(workspaceDimension + 3);
 
     this->startPosition = Eigen::VectorXf::Zero(workspaceDimension);
     this->desiredPosition = Eigen::VectorXf::Zero(workspaceDimension);
 }
 
-bool TrajectoryGenerator::configureHook() {
+bool TrajectoryGenerator::configureHook()
+{
     keepOrientation = false;
     recoveryFactor = 10;
     timeScale = 0.001;
@@ -101,69 +106,91 @@ bool TrajectoryGenerator::configureHook() {
     return true;
 }
 
-void TrajectoryGenerator::stopHook() {
+void TrajectoryGenerator::stopHook()
+{
     // stops the component (update hook wont be  called anymore)
 }
 
-void TrajectoryGenerator::cleanupHook() {
+void TrajectoryGenerator::cleanupHook()
+{
     reachedStart = false;
     // cleaning the component data
 }
 
-bool TrajectoryGenerator::setStartPos(float x, float y, float z) {
+bool TrajectoryGenerator::setStartPos(float x, float y, float z)
+{
     reachedStart = false;
-    startPosition = Eigen::Vector3f(x,y,z);
+    startPosition = Eigen::Vector3f(x, y, z);
     return true;
 }
 
-bool TrajectoryGenerator::setTargetPos(float x, float y, float z) {
+bool TrajectoryGenerator::setTargetPos(float x, float y, float z)
+{
     //TODO: Current way to test. Later on setup ports for this with arbitrary DOFSize
 
-//bool TrajectoryGenerator::setLinearTarget(Eigen::VectorXf &start, Eigen::VectorXf &target) {
+    //bool TrajectoryGenerator::setLinearTarget(Eigen::VectorXf &start, Eigen::VectorXf &target) {
     //if(startPosition.size() == DOFsize && start.size() == DOFsize && target.size() == DOFsize){
-        desiredPosition = Eigen::Vector3f(x,y,z);
-        return true;
+    desiredPosition = Eigen::Vector3f(x, y, z);
+    Eigen::Quaternionf qtmp = Eigen::Quaternionf(0, 0, 1, 0);
+    out_desiredTaskSpacePosition_var(3) = qtmp.w();
+    out_desiredTaskSpacePosition_var(4) = qtmp.x();
+    out_desiredTaskSpacePosition_var(5) = qtmp.y();
+    out_desiredTaskSpacePosition_var(6) = qtmp.z();
+    return true;
     //}
 
-    return false;
+    // return false;
 }
 
-bool TrajectoryGenerator::checkDistanceToStart() {
-    for (int i=0; i < workspaceDimension; i++) {
-        if (fabs(startPosition(i) - in_cartPos_var(i)) > 0.01) {
+bool TrajectoryGenerator::checkDistanceToStart()
+{
+    for (int i = 0; i < workspaceDimension; i++)
+    {
+        if (fabs(startPosition(i) - in_cartPos_var(i)) > 0.01)
+        {
             return false;
         }
     }
     return true;
 }
 
-void TrajectoryGenerator::sampleLinearPath(Eigen::VectorXf &target) {
-    for (int i = 0; i < numberOfEndEffectors; i++) {
-        out_desiredTaskSpacePosition_var.segment<3>(i * workspaceDimension) = (target - in_cartPos_var.segment<3>(i * workspaceDimension))/recoveryFactor + in_cartPos_var.segment<3>(i * workspaceDimension);
-        out_desiredTaskSpaceVelocity_var.segment<3>(i * workspaceDimension) = (out_desiredTaskSpacePosition_var - in_cartPos_var.segment<3>(i * workspaceDimension))/timeScale;
-        out_desiredTaskSpaceAcceleration_var.segment<3>(i * workspaceDimension)  = (out_desiredTaskSpaceVelocity_var - in_cartVel_var)/timeScale;
+void TrajectoryGenerator::sampleLinearPath(Eigen::VectorXf &target)
+{
+    for (int i = 0; i < numberOfEndEffectors; i++)
+    {
+        out_desiredTaskSpacePosition_var.segment<3>(i * (workspaceDimension + 4)) = (target - in_cartPos_var.segment<3>(i * (workspaceDimension + 4))) / recoveryFactor + in_cartPos_var.segment<3>(i * (workspaceDimension + 4));
+        out_desiredTaskSpaceVelocity_var.segment<3>(i * (workspaceDimension + 3)) = (out_desiredTaskSpacePosition_var - in_cartPos_var.segment<3>(i * (workspaceDimension + 3))) / timeScale + in_cartPos_var.segment<3>(i * (workspaceDimension + 3));
+        // out_desiredTaskSpaceAcceleration_var.segment<3>(i * (workspaceDimension + 3)) = (out_desiredTaskSpaceVelocity_var - in_cartVel_var) / timeScale;
         //TODO: Add maximal speed to dimensions, then check im sign of distance changed. If so, new pos would overshoot, so set to target.
     }
 }
 
-void TrajectoryGenerator::updateHook() {
+void TrajectoryGenerator::updateHook()
+{
 
     //Update current position information
-    if (in_cartPos_port.connected()) {
+    if (in_cartPos_port.connected())
+    {
         in_cartPos_flow = in_cartPos_port.read(in_cartPos_var);
-    } else {
+    }
+    else
+    {
         return;
     }
 
     //Check if start position was already reached
-    if (goForIt) {
-        if (reachedStart || checkDistanceToStart()) {
+    if (goForIt)
+    {
+        if (reachedStart || checkDistanceToStart())
+        {
             samplePath(desiredPosition);
-        } else {
+        }
+        else
+        {
             sampleLinearPath(startPosition);
         }
 
         out_desiredTaskSpacePosition_port.write(out_desiredTaskSpacePosition_var);
-        out_desiredTaskSpaceVelocity_port.write(out_desiredTaskSpaceVelocity_var); 
+        out_desiredTaskSpaceVelocity_port.write(out_desiredTaskSpaceVelocity_var);
     }
 }

@@ -12,10 +12,11 @@
 #include <Eigen/Dense>
 #include <kdl/frames.hpp>
 
-class TrajectoryGenerator : public RTT::TaskContext {
+class TrajectoryGenerator : public RTT::TaskContext
+{
 
-public:
-    TrajectoryGenerator(std::string const & name);
+  public:
+    TrajectoryGenerator(std::string const &name);
 
     bool configureHook();
     void stopHook();
@@ -27,13 +28,13 @@ public:
 
     bool setStartPos(float a, float b, float c);
     bool setTargetPos(float a, float b, float c);
-    
-    void samplePath(Eigen::VectorXf &target) {};
+
+    virtual void samplePath(Eigen::VectorXf &target) = 0;
     void sampleLinearPath(Eigen::VectorXf &target);
-    
+
     bool checkDistanceToStart();
 
-protected:
+  protected:
     // Ports
     RTT::OutputPort<Eigen::VectorXf> out_desiredTaskSpacePosition_port;
     RTT::OutputPort<Eigen::VectorXf> out_desiredTaskSpaceVelocity_port;
@@ -42,7 +43,7 @@ protected:
     RTT::InputPort<Eigen::VectorXf> in_cartPos_port;
     RTT::InputPort<Eigen::VectorXf> in_cartVel_port;
     RTT::InputPort<Eigen::VectorXf> in_cartAcc_port;
-    
+
     // Data Flow
     RTT::FlowStatus out_desiredTaskSpacePosition_flow;
     RTT::FlowStatus out_desiredTaskSpaceVelocity_flow;

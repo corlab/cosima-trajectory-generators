@@ -13,11 +13,11 @@
 #include <Eigen/Dense>
 #include <kdl/frames.hpp>
 
+class TrajectoryGeneratorElliptic : public TrajectoryGenerator
+{
 
-class TrajectoryGeneratorElliptic : public TrajectoryGenerator {
-
-public:
-    TrajectoryGeneratorElliptic(std::string const & name);
+  public:
+    TrajectoryGeneratorElliptic(std::string const &name);
 
     void samplePath(Eigen::VectorXf &target);
     void setStepSize(unsigned int stepSize);
@@ -25,14 +25,12 @@ public:
     void setRadii(float radA, float radB);
     void setAngles(float angleX, float angleY, float angleZ);
     void computeEllipsoid();
-    
+
     void printPositions();
     bool setStartPos(float a, float b, float c);
-    
 
-protected:
-
-    Eigen::Matrix3Xf ellipsePositions;
+  protected:
+    Eigen::MatrixXf ellipsePositions;
     Eigen::Vector3f shift;
     Eigen::Matrix3f rotEuler;
 
